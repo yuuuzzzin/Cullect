@@ -62,4 +62,5 @@ dependencies {
     dependOnTikXML()
     dependOnHilt()
     dependOnCoroutines()
+    dependOnGlide()
 }

@@ -17,6 +17,7 @@ object Versions {
     const val ROOM = "2.4.1"
     const val FRAGMENT = "1.4.0"
     const val ACTIVITY = "1.4.0"
+    const val SWIPE_REFRESH_LAYOUT = "1.1.0"
 
     // Coroutines
     const val COROUTINES = "1.3.9"
@@ -35,6 +36,9 @@ object Versions {
 
     // Paging3
     const val PAGING = "3.1.0"
+
+    // Glide
+    const val GLIDE = "4.13.0"
 
     // TEST
     const val JUNIT = "1.1.3"

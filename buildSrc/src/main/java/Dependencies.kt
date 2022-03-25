@@ -16,6 +16,7 @@ object Libraries {
         const val RECYCLERVIEW          = "androidx.recyclerview:recyclerview:${Versions.RECYCLERVIEW}"
         const val PAGING                = "androidx.paging:paging-runtime:${Versions.PAGING}"
         const val PAGING_COMMON         = "androidx.paging:paging-common:${Versions.PAGING}"
+        const val SWIPE_REFRESH_LAYOUT  = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.SWIPE_REFRESH_LAYOUT}"
     }
 
     object Kotlin {
@@ -67,6 +68,11 @@ object Libraries {
         const val CORE                  = "com.tickaroo.tikxml:core:${Versions.TIKXML}"
         const val RETROFIT_CONVERTER    = "com.tickaroo.tikxml:retrofit-converter:${Versions.TIKXML}"
         const val PROCESSOR             = "com.tickaroo.tikxml:processor:${Versions.TIKXML}"
+    }
+
+    object Glide {
+        const val Glide                 = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
+        const val COMPILER              = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
     }
 
     object Test {
@@ -147,6 +153,11 @@ fun DependencyHandler.dependOnRoom() {
 
 fun DependencyHandler.dependOnKotlin() {
     implementation(Libraries.Kotlin.KOTLIN_STDLIB)
+}
+
+fun DependencyHandler.dependOnGlide() {
+    implementation(Libraries.Glide.Glide)
+    kapt(Libraries.Glide.COMPILER)
 }
 
 fun DependencyHandler.dependOnTest() {
