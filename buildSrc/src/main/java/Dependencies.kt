@@ -98,6 +98,7 @@ fun DependencyHandler.dependOnAndroidX() {
     implementation(Libraries.AndroidX.FRAGMENT)
     implementation(Libraries.AndroidX.RECYCLERVIEW)
     implementation(Libraries.AndroidX.PAGING)
+    implementation(Libraries.AndroidX.SWIPE_REFRESH_LAYOUT)
 }
 
 fun DependencyHandler.dependOnCoroutines() {
