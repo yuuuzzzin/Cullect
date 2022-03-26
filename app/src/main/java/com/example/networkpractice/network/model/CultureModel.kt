@@ -20,7 +20,7 @@ data class CultureModel(
     @PropertyElement(name = "area")
     val area: String?,
     @PropertyElement(name = "thumbnail")
-    val thumbnail: String,
+    val thumbnail: String?,
     @PropertyElement(name = "gpsX")
     val gpsX: String,
     @PropertyElement(name = "gpsY")

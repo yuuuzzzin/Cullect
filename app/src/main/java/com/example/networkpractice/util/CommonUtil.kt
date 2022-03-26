@@ -16,14 +16,4 @@ fun defaultSnackBar(view: View, message: String) {
         .show()
 }
 
-fun convertDPtoPX(context: Context, dp: Int): Int {
-    val density: Float = context.resources.displayMetrics.density
-    return (dp.toFloat() * density).roundToInt()
-}
-
-fun convertPXtoDP(context: Context, px: Int): Int {
-    val density: Float = context.resources.displayMetrics.density
-    return (px.toFloat() / density).roundToInt()
-}
-
 fun decode(str: String): String = URLDecoder.decode(str, "UTF-8")

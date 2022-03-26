@@ -22,11 +22,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    @Singleton
-    @Provides
-    fun provideCultureService(retrofit: Retrofit): CultureService =
-        retrofit.create(CultureService::class.java)
-
     private const val CULTURE_BASE_URL = BuildConfig.CULTURE_BASE_URL
     private const val API_KEY = BuildConfig.CULTURE_API_KEY
 
@@ -36,6 +31,11 @@ object NetworkModule {
             decode(API_KEY)).build()
         return@Interceptor it.proceed(request.newBuilder().url(url).build())
     }
+
+    @Singleton
+    @Provides
+    fun provideCultureService(retrofit: Retrofit): CultureService =
+        retrofit.create(CultureService::class.java)
 
     @Provides
     @Singleton
