@@ -63,4 +63,5 @@ dependencies {
     dependOnHilt()
     dependOnCoroutines()
     dependOnGlide()
+    dependOnShimmer()
 }

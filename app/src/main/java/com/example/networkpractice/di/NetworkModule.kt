@@ -4,7 +4,7 @@ import com.example.networkpractice.BuildConfig
 import com.example.networkpractice.network.api.CultureService
 import com.tickaroo.tikxml.TikXml
 import com.tickaroo.tikxml.retrofit.TikXmlConverterFactory
-import com.yuuuzzzin.recordnize.util.decode
+import com.example.networkpractice.util.decode
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,7 +28,8 @@ object NetworkModule {
     private val apiKeyInterceptor = Interceptor {
         val request = it.request()
         val url = request.url.newBuilder().addQueryParameter("serviceKey",
-            decode(API_KEY)).build()
+            decode(API_KEY)
+        ).build()
         return@Interceptor it.proceed(request.newBuilder().url(url).build())
     }
 

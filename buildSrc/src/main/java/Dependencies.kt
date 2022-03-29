@@ -75,6 +75,8 @@ object Libraries {
         const val COMPILER              = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
     }
 
+    const val Shimmer                   = "com.facebook.shimmer:shimmer:${Versions.SHIMMER}"
+
     object Test {
         const val JUNIT                 = "androidx.test.ext:junit:${Versions.JUNIT}"
     }
@@ -159,6 +161,10 @@ fun DependencyHandler.dependOnKotlin() {
 fun DependencyHandler.dependOnGlide() {
     implementation(Libraries.Glide.Glide)
     kapt(Libraries.Glide.COMPILER)
+}
+
+fun DependencyHandler.dependOnShimmer() {
+    implementation(Libraries.Shimmer)
 }
 
 fun DependencyHandler.dependOnTest() {

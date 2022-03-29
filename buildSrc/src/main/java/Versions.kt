@@ -40,6 +40,9 @@ object Versions {
     // Glide
     const val GLIDE = "4.13.0"
 
+    // FaceBook Shimmer
+    const val SHIMMER = "0.5.0"
+
     // TEST
     const val JUNIT = "1.1.3"
 
