@@ -17,6 +17,8 @@ object Libraries {
         const val PAGING                = "androidx.paging:paging-runtime:${Versions.PAGING}"
         const val PAGING_COMMON         = "androidx.paging:paging-common:${Versions.PAGING}"
         const val SWIPE_REFRESH_LAYOUT  = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.SWIPE_REFRESH_LAYOUT}"
+        const val NAVIGATION_FRAGMENT   = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
+        const val NAVIGATION_UI         = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION}"
     }
 
     object Kotlin {
@@ -49,11 +51,6 @@ object Libraries {
         const val JAVA                  = "io.reactivex.rxjava3:rxjava:3.1.2"
         const val KOTLIN                = "io.reactivex.rxjava3:rxkotlin:3.0.1"
         const val ANDROID               = "io.reactivex.rxjava3:rxandroid:3.0.0"
-    }
-
-    object Navigation {
-        const val FRAGMENT              = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
-        const val UI                    = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION}"
     }
 
     object Room {
@@ -101,6 +98,8 @@ fun DependencyHandler.dependOnAndroidX() {
     implementation(Libraries.AndroidX.RECYCLERVIEW)
     implementation(Libraries.AndroidX.PAGING)
     implementation(Libraries.AndroidX.SWIPE_REFRESH_LAYOUT)
+    implementation(Libraries.AndroidX.NAVIGATION_FRAGMENT)
+    implementation(Libraries.AndroidX.NAVIGATION_UI)
 }
 
 fun DependencyHandler.dependOnCoroutines() {
@@ -140,11 +139,6 @@ fun DependencyHandler.dependOnRx() {
     implementation(Libraries.Rx.JAVA)
     implementation(Libraries.Rx.KOTLIN)
     implementation(Libraries.Rx.ANDROID)
-}
-
-fun DependencyHandler.dependOnNavigation() {
-    implementation(Libraries.Navigation.FRAGMENT)
-    implementation(Libraries.Navigation.UI)
 }
 
 fun DependencyHandler.dependOnRoom() {

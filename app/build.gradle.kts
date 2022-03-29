@@ -53,6 +53,7 @@ fun getApiKey(propertyKey: String): String {
 }
 
 dependencies {
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     dependOnAndroidX()
     dependOnKotlin()
     dependOnTest()
@@ -64,4 +65,5 @@ dependencies {
     dependOnCoroutines()
     dependOnGlide()
     dependOnShimmer()
+
 }
