@@ -5,12 +5,12 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.networkpractice.R
 import com.example.networkpractice.databinding.ActivityMainBinding
+import com.example.networkpractice.util.RecyclerViewUtil
 import com.example.networkpractice.viewmodel.HomeViewModel
-import com.yuuuzzzin.offoff_android.utils.base.BaseBindingActivity
+import com.example.networkpractice.base.BaseBindingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.distinctUntilChangedBy
@@ -29,14 +29,11 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(R.layout.activity_
     }
 
     private fun initView() {
+
         binding.rvCulture.apply {
-            layoutManager = LinearLayoutManager(
-                this@MainActivity,
-                RecyclerView.VERTICAL,
-                false
-            )
+            layoutManager = GridLayoutManager(this@MainActivity, 2)
             adapter = cultureListAdapter
-            //addItemDecoration(spaceDecoration)
+            addItemDecoration(RecyclerViewUtil.GridSpaceItemDecoration(2, 16, false))
             hasFixedSize()
         }
 
