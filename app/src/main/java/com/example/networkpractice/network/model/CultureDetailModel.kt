@@ -15,10 +15,32 @@ data class CultureDetailModel(
     val endDate: String,
     @PropertyElement(name = "place")
     val place: String?,
-    @PropertyElement(name = "reralmName")
-    val to: String,
+    @PropertyElement(name = "realmName")
+    val realm: String,
     @PropertyElement(name = "area")
-    val keyword: String?,
+    val area: String?,
     @PropertyElement(name = "subTitle")
-    val sortStdr: Int
+    val subTitle: String?,
+    @PropertyElement(name = "price")
+    val price: String?,
+    @PropertyElement(name = "contents1")
+    val contents1: String?,
+    @PropertyElement(name = "contents2")
+    val contents2: String?,
+    @PropertyElement(name = "url")
+    val url: String?,
+    @PropertyElement(name = "phone")
+    val phone: String?,
+    @PropertyElement(name = "imgUrl")
+    val imgUrl: String?,
+    @PropertyElement(name = "gpsX")
+    val gpsX: String,
+    @PropertyElement(name = "gpsY")
+    val gpsY: String,
+    @PropertyElement(name = "placeUrl")
+    val placeUrl: String?,
+    @PropertyElement(name = "placeAddr")
+    val placeAddress: String?,
+    @PropertyElement(name = "placeSeq")
+    val placeSeq: String
 )

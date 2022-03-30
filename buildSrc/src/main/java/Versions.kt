@@ -40,8 +40,17 @@ object Versions {
     // Glide
     const val GLIDE = "4.13.0"
 
+    // Glide-Transformation
+    const val GLIDE_TRANSFORMATION = "4.3.0"
+
     // FaceBook Shimmer
     const val SHIMMER = "0.5.0"
+
+    // Lottie
+    const val LOTTIE = "5.0.3"
+
+    // Naver Map
+    const val NAVER_MAP = "3.12.0"
 
     // TEST
     const val JUNIT = "1.1.3"

@@ -1,6 +1,5 @@
 package com.example.networkpractice.ui.home
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -10,10 +9,9 @@ import com.example.networkpractice.databinding.RvItemCultureBinding
 import com.example.networkpractice.network.model.CultureModel
 
 class CultureListAdapter:
-    PagingDataAdapter<CultureModel, CultureListAdapter.ImageViewHolder>(
+    PagingDataAdapter<CultureModel, CultureListAdapter.CultureViewHolder>(
         object : DiffUtil.ItemCallback<CultureModel>() {
             override fun areItemsTheSame(oldItem: CultureModel, newItem: CultureModel): Boolean {
-                Log.d("tag_diff", "diff확인중")
                 return oldItem.seq == newItem.seq
             }
 
@@ -23,7 +21,17 @@ class CultureListAdapter:
         }
     ) {
 
-    override fun onBindViewHolder(holder: CultureListAdapter.ImageViewHolder, position: Int) {
+    interface OnItemClickListener {
+        fun onItemClicked(item: CultureModel?)
+    }
+
+    fun setItemClickListener(onItemClickListener: OnItemClickListener) {
+        this.itemClickListener = onItemClickListener
+    }
+
+    private lateinit var itemClickListener : OnItemClickListener
+
+    override fun onBindViewHolder(holder: CultureListAdapter.CultureViewHolder, position: Int) {
         val item = getItem(position)?: return
         holder.onBind(item)
     }
@@ -31,14 +39,21 @@ class CultureListAdapter:
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CultureListAdapter.ImageViewHolder {
-        return ImageViewHolder(binding = RvItemCultureBinding.inflate(
+    ): CultureListAdapter.CultureViewHolder {
+        return CultureViewHolder(binding = RvItemCultureBinding.inflate(
             LayoutInflater.from(parent.context), parent, false)
         )
     }
 
-    inner class ImageViewHolder(private val binding: RvItemCultureBinding):
+    inner class CultureViewHolder(private val binding: RvItemCultureBinding):
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                itemClickListener.onItemClicked(binding.item)
+            }
+        }
+
         fun onBind(item: CultureModel) {
             binding.item = item
         }

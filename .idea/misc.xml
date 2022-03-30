@@ -5,8 +5,13 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_round_category_24.xml" value="0.1415" />
         <entry key="app/src/main/res/drawable/menu_selector_color.xml" value="0.1415" />
+        <entry key="app/src/main/res/drawable/round_18.xml" value="0.159" />
+        <entry key="app/src/main/res/layout/activity_culture_by_realm.xml" value="0.2598958333333333" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.12639311043566362" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20764007568359377" />
+        <entry key="app/src/main/res/layout/fragment_collection.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2595108695652174" />
+        <entry key="app/src/main/res/layout/fragment_realm.xml" value="0.375" />
         <entry key="app/src/main/res/layout/network_security_config.xml" value="0.22735507246376813" />
         <entry key="app/src/main/res/layout/rv_item_culture.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2598958333333333" />

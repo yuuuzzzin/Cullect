@@ -1,15 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.bumptech.glide:gifdecoder:4.13.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f1e165483b262ef549b54fc5c6cdac54/transformed/gifdecoder-4.13.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cd57fce3102bc797e19632deec502f15/transformed/gifdecoder-4.13.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/98f4d106a5e19d7ac477ec052096b990/transformed/gifdecoder-4.13.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2825dbb62480480dcd0262b7f3d829f3/transformed/gifdecoder-4.13.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1f93cfbbc77c43936780e54c0d78f7f7/transformed/gifdecoder-4.13.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f1e165483b262ef549b54fc5c6cdac54/transformed/gifdecoder-4.13.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f1e165483b262ef549b54fc5c6cdac54/transformed/gifdecoder-4.13.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f1e165483b262ef549b54fc5c6cdac54/transformed/gifdecoder-4.13.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/010bc175f5b96be4eba83dfa056480fe/transformed/gifdecoder-4.13.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cd57fce3102bc797e19632deec502f15/transformed/gifdecoder-4.13.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cd57fce3102bc797e19632deec502f15/transformed/gifdecoder-4.13.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cd57fce3102bc797e19632deec502f15/transformed/gifdecoder-4.13.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/gifdecoder/4.13.0/aebee8af1fae41ae978293539efd735e9d3233dc/gifdecoder-4.13.0-javadoc.jar!/" />

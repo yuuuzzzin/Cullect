@@ -1,8 +1,5 @@
 package com.example.networkpractice.network.model
 
-import android.graphics.ImageDecoder
-import android.net.Uri
-import com.example.networkpractice.model.CultureList
 import com.tickaroo.tikxml.annotation.Element
 import com.tickaroo.tikxml.annotation.PropertyElement
 import com.tickaroo.tikxml.annotation.Xml
@@ -14,13 +11,6 @@ data class CultureResponseModel(
     @Element(name = "msgBody")
     val body: Body?
 )
-//    : BaseResponse<CultureList> () {
-//    override fun mapper(): CultureList {
-//        return CultureList(
-//            cultureList = body!!.cultureList
-//        )
-//    }
-//}
 
 @Xml(name = "comMsgHeader")
 data class Header(
@@ -47,7 +37,7 @@ data class Body(
     @PropertyElement(name = "rows")
     val rows: Int,
     @PropertyElement(name = "realmCode")
-    val realm: String,
+    val realm: String?,
     @PropertyElement(name = "from")
     val from: String,
     @PropertyElement(name = "to")

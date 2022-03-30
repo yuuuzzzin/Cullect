@@ -1,4 +1,5 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.api.internal.artifacts.transform.TransformationNode
 
 object Libraries {
 
@@ -47,12 +48,6 @@ object Libraries {
 
     const val TIMBER                    = "com.jakewharton.timber:timber:${Versions.TIMBER}"
 
-    object Rx {
-        const val JAVA                  = "io.reactivex.rxjava3:rxjava:3.1.2"
-        const val KOTLIN                = "io.reactivex.rxjava3:rxkotlin:3.0.1"
-        const val ANDROID               = "io.reactivex.rxjava3:rxandroid:3.0.0"
-    }
-
     object Room {
         const val RUNTIME               = "androidx.room:room-runtime:${Versions.ROOM}"
         const val COMPILER              = "androidx.room:room-compiler:${Versions.ROOM}"
@@ -70,9 +65,12 @@ object Libraries {
     object Glide {
         const val Glide                 = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
         const val COMPILER              = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
+        const val TRANSFORMATION        = "jp.wasabeef:glide-transformations:${Versions.GLIDE_TRANSFORMATION}"
     }
 
-    const val Shimmer                   = "com.facebook.shimmer:shimmer:${Versions.SHIMMER}"
+    const val SHIMMER                   = "com.facebook.shimmer:shimmer:${Versions.SHIMMER}"
+    const val LOTTIE                    = "com.airbnb.android:lottie:${Versions.LOTTIE}"
+    const val NAVER_MAP                 = "com.naver.maps:map-sdk:${Versions.NAVER_MAP}"
 
     object Test {
         const val JUNIT                 = "androidx.test.ext:junit:${Versions.JUNIT}"
@@ -135,17 +133,10 @@ fun DependencyHandler.dependOnTikXML() {
     kapt(Libraries.TikXML.PROCESSOR)
 }
 
-fun DependencyHandler.dependOnRx() {
-    implementation(Libraries.Rx.JAVA)
-    implementation(Libraries.Rx.KOTLIN)
-    implementation(Libraries.Rx.ANDROID)
-}
-
 fun DependencyHandler.dependOnRoom() {
     implementation(Libraries.Room.RUNTIME)
-    implementation(Libraries.Room.COMPILER)
+    kapt(Libraries.Room.COMPILER)
     implementation(Libraries.Room.KTX)
-    implementation(Libraries.Room.RXJAVA3)
 }
 
 fun DependencyHandler.dependOnKotlin() {
@@ -155,10 +146,16 @@ fun DependencyHandler.dependOnKotlin() {
 fun DependencyHandler.dependOnGlide() {
     implementation(Libraries.Glide.Glide)
     kapt(Libraries.Glide.COMPILER)
+    implementation(Libraries.Glide.TRANSFORMATION)
 }
 
-fun DependencyHandler.dependOnShimmer() {
-    implementation(Libraries.Shimmer)
+fun DependencyHandler.dependOnAnimation() {
+    implementation(Libraries.SHIMMER)
+    implementation(Libraries.LOTTIE)
+}
+
+fun DependencyHandler.dependOnNaverMap() {
+    implementation(Libraries.NAVER_MAP)
 }
 
 fun DependencyHandler.dependOnTest() {
