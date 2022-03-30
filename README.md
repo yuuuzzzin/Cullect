@@ -29,14 +29,12 @@
 
 ## Ui 상태에 따른 관리
 
- <img src = "https://user-images.githubusercontent.com/57751515/160939988-65e84bf7-c697-412e-ba1e-8bb22b8fb197.png" width="250"/>
+ <img src = "https://user-images.githubusercontent.com/57751515/160945977-315f8660-15b5-4bc4-926a-cdf924f7fba2.png" width="250"/>
  
  - StateFloww를 통해 UiState를 관리
   - 로딩 시 쉬머 효과를 주거나 Lottie 애니메이션 출력
   - 에러 시 에러 내용 출력
   - 성공 시 수집한 데이터 출력
-
-
 
 ## 🔧 App Version
 
