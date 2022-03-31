@@ -28,9 +28,7 @@
 - NaverMap을 활용해 위치를 마커로 지도에 표시
 
 ## Ui 상태에 따른 관리
-
- <img src = "https://user-images.githubusercontent.com/57751515/160945977-315f8660-15b5-4bc4-926a-cdf924f7fba2.png" width="250"/>
- 
+![ezgif-1-7b5b6e4920](https://user-images.githubusercontent.com/57751515/160946056-b6c900ed-ace8-4b1e-aebc-f02e053b758a.gif)
  - StateFloww를 통해 UiState를 관리
   - 로딩 시 쉬머 효과를 주거나 Lottie 애니메이션 출력
   - 에러 시 에러 내용 출력
