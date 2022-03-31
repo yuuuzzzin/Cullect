@@ -29,7 +29,7 @@
 
 ## Ui 상태에 따른 관리
 ![ezgif-1-7b5b6e4920](https://user-images.githubusercontent.com/57751515/160946056-b6c900ed-ace8-4b1e-aebc-f02e053b758a.gif)
- - StateFloww를 통해 UiState를 관리
+- StateFloww를 통해 UiState를 관리
   - 로딩 시 쉬머 효과를 주거나 Lottie 애니메이션 출력
   - 에러 시 에러 내용 출력
   - 성공 시 수집한 데이터 출력
