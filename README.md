@@ -30,7 +30,7 @@
 ## Ui 상태에 따른 관리
 ![ezgif-1-7b5b6e4920](https://user-images.githubusercontent.com/57751515/160946056-b6c900ed-ace8-4b1e-aebc-f02e053b758a.gif)
 - StateFlow를 통해 UiState를 관리
-  - 로딩 시 쉬머 Lottie 애니메이션 출력
+  - 로딩 시 Lottie 애니메이션 출력
   - 에러 시 에러 내용 출력
   - 성공 시 수집한 데이터 출력
 
@@ -59,5 +59,5 @@ targetSdkVersion 30 / minSdkVersion 21
 - [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) 
 - [Glide](https://github.com/bumptech/glide) 
 - [Hilt](https://developer.android.com/training/dependency-injection/hilt-jetpack) 
-- [Timber](https://github.com/JakeWharton/timber)
+- [Lottie](https://github.com/airbnb/lottie-android)
 - [Naver Map SDK](https://www.ncloud.com/product/applicationService/maps)
