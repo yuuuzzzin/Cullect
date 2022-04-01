@@ -34,6 +34,7 @@
   - 에러 시 에러 내용 출력
   - 성공 시 수집한 데이터 출력
 
++) 전시 찜 기능 구현 중.. 🏃🏻‍♀️
 ## 🔧 App Version
 
 targetSdkVersion 30 / minSdkVersion 21 
