@@ -44,10 +44,6 @@ targetSdkVersion 30 / minSdkVersion 21
 
 - MVVM
 
-## 🎨 Design Pattern
-
-- repository pattern
-
 ## 📚 Libraries
 
 - Android Jetpack
