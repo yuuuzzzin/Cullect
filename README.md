@@ -48,14 +48,13 @@ targetSdkVersion 30 / minSdkVersion 21
 
 - Android Jetpack
   - [Navigation](https://developer.android.com/jetpack/androidx/releases/navigation)
-  - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
   - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
   - [Lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle)
   - [DataBinding](https://developer.android.com/topic/libraries/data-binding)
   - [Paging3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
-- [Retrofit2](https://square.github.io/retrofit/) : 네트워킹
-- [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) : 비동기 처리
-- [Glide](https://github.com/bumptech/glide) : 이미지 처리
-- [Hilt](https://developer.android.com/training/dependency-injection/hilt-jetpack) : 의존성 주입
-- [Timber](https://github.com/JakeWharton/timber) : 로깅
-- [Naver Map SDK](https://www.ncloud.com/product/applicationService/maps) : 지도
+- [Retrofit2](https://square.github.io/retrofit/)
+- [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) 
+- [Glide](https://github.com/bumptech/glide) 
+- [Hilt](https://developer.android.com/training/dependency-injection/hilt-jetpack) 
+- [Timber](https://github.com/JakeWharton/timber)
+- [Naver Map SDK](https://www.ncloud.com/product/applicationService/maps)
