@@ -53,6 +53,7 @@ targetSdkVersion 30 / minSdkVersion 21
   - [DataBinding](https://developer.android.com/topic/libraries/data-binding)
   - [Paging3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
 - [Retrofit2](https://square.github.io/retrofit/)
+- [OkHttp](https://github.com/square/okhttp)
 - [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) 
 - [Glide](https://github.com/bumptech/glide) 
 - [Hilt](https://developer.android.com/training/dependency-injection/hilt-jetpack) 
