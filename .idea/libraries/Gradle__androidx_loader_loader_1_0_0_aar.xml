@@ -2,9 +2,10 @@
   <library name="Gradle: androidx.loader:loader:1.0.0@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/756b416eca87f33f26751565e633efd9/transformed/loader-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/066f4e3147d265d6d41dc961eaa72d52/transformed/loader-1.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/066f4e3147d265d6d41dc961eaa72d52/transformed/loader-1.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/066f4e3147d265d6d41dc961eaa72d52/transformed/loader-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b711c351d149dc079c39616cd7b0754f/transformed/loader-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b711c351d149dc079c39616cd7b0754f/transformed/loader-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b711c351d149dc079c39616cd7b0754f/transformed/loader-1.0.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

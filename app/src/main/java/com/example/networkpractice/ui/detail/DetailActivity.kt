@@ -5,7 +5,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.networkpractice.R
 import com.example.networkpractice.base.BaseBindingActivity
 import com.example.networkpractice.databinding.ActivityDetailBinding
@@ -24,7 +26,8 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AndroidEntryPoint
-class DetailActivity : BaseBindingActivity<ActivityDetailBinding>(R.layout.activity_detail), OnMapReadyCallback {
+class DetailActivity : BaseBindingActivity<ActivityDetailBinding>(R.layout.activity_detail),
+    OnMapReadyCallback {
 
     private val viewModel: DetailViewModel by viewModels()
     private lateinit var mapView: MapView
@@ -35,60 +38,52 @@ class DetailActivity : BaseBindingActivity<ActivityDetailBinding>(R.layout.activ
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mapView = binding.mapView
-        processIntent()
-        observeViewModel(savedInstanceState)
-    }
 
-    private fun processIntent() {
-        lifecycleScope.launchWhenStarted {
-            intent?.getStringExtra(CULTURE_SEQ)?.let {
-                viewModel.getCultureDetail(it)
-            }
-        }
+        observeViewModel(savedInstanceState)
     }
 
     private fun observeViewModel(savedInstanceState: Bundle?) {
         lifecycleScope.launch {
-            viewModel.uiState.collect { state ->
-                when (state) {
-                    is UiState.Success -> {
-                        binding.item = state.data
-                        binding.tvEmpty.visibility = View.GONE
-                        binding.loading.visibility = View.GONE
-
-                        if (!state.data.url.isNullOrEmpty()) {
-                            binding.btTickting.visibility = View.VISIBLE
-                            binding.btTickting.setOnClickListener {
-                                val intent = Intent(
-                                    Intent.ACTION_VIEW,
-                                    Uri.parse(state.data.url)
-                                )
-                                startActivity(intent)
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.uiState.collect { state ->
+                        when (state) {
+                            is UiState.Loading -> {
+                                binding.loading.visibility = View.VISIBLE
                             }
-                        } else {
-                            binding.btTickting.visibility = View.GONE
-                        }
+                            is UiState.Success -> {
+                                binding.item = state.data
+                                binding.tvEmpty.visibility = View.GONE
+                                binding.loading.visibility = View.GONE
 
-                        if(!state.data.gpsX.isNullOrEmpty() && !state.data.gpsY.isNullOrEmpty()) {
-                            gpsX = state.data.gpsX.toDouble()
-                            gpsY = state.data.gpsY.toDouble()
-                            Timber.d("$gpsX/$gpsY")
+                                if (!state.data.url.isNullOrEmpty()) {
+                                    binding.btTickting.visibility = View.VISIBLE
+                                    binding.btTickting.setOnClickListener {
+                                        val intent = Intent(
+                                            Intent.ACTION_VIEW,
+                                            Uri.parse(state.data.url)
+                                        )
+                                        startActivity(intent)
+                                    }
+                                } else {
+                                    binding.btTickting.visibility = View.GONE
+                                }
 
-                            setMapView(savedInstanceState)
-                        }
-                    }
-                    is UiState.Loading -> {
-                        binding.loading.visibility = View.VISIBLE
-                    }
-                    is UiState.Empty -> {
-                        binding.loading.visibility = View.GONE
-                        binding.tvEmpty.visibility = View.VISIBLE
-                    }
-                    is UiState.Error -> {
-                        binding.loading.visibility = View.GONE
-                        binding.tvEmpty.apply {
-                            text = state.error.toString()
-                            visibility = View.VISIBLE
+                                if (!state.data.gpsX.isNullOrEmpty() && !state.data.gpsY.isNullOrEmpty()) {
+                                    gpsX = state.data.gpsX.toDouble()
+                                    gpsY = state.data.gpsY.toDouble()
+                                    Timber.d("$gpsX/$gpsY")
+
+                                    setMapView(savedInstanceState)
+                                }
+                            }
+                            is UiState.Error -> {
+                                binding.loading.visibility = View.GONE
+                                binding.tvEmpty.apply {
+                                    text = "코드: ${state.code} / 메시지: ${state.msg}"
+                                    visibility = View.VISIBLE
+                                }
+                            }
                         }
                     }
                 }
@@ -147,5 +142,9 @@ class DetailActivity : BaseBindingActivity<ActivityDetailBinding>(R.layout.activ
         val marker = Marker()
         marker.position = LatLng(gpsY, gpsX)
         marker.map = naverMap
+    }
+
+    companion object {
+        const val CULTURE_SEQ = "culture.seq"
     }
 }

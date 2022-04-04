@@ -10,7 +10,7 @@
 
         <variable
             name="item"
-            type="com.example.networkpractice.network.model.CultureDetailModel" />
+            type="com.example.networkpractice.model.CultureDetail" />
     </data>
 
     <ScrollView

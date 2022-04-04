@@ -38,7 +38,6 @@ object Libraries {
     object Retrofit {
         const val RETROFIT              = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
         const val GSON                  = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT}"
-        const val RXJAVA                = "com.squareup.retrofit2:adapter-rxjava3:${Versions.RETROFIT}"
     }
 
     object OKHttp {
@@ -52,7 +51,6 @@ object Libraries {
         const val RUNTIME               = "androidx.room:room-runtime:${Versions.ROOM}"
         const val COMPILER              = "androidx.room:room-compiler:${Versions.ROOM}"
         const val KTX                   = "androidx.room:room-ktx:${Versions.ROOM}"
-        const val RXJAVA3               = "androidx.room:room-rxjava3:${Versions.ROOM}"
     }
 
     object TikXML {
