@@ -19,9 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
-import timber.log.Timber
 import java.text.SimpleDateFormat
-import java.time.Year
 import java.util.*
 
 @AndroidEntryPoint

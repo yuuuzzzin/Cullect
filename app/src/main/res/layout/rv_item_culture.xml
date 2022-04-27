@@ -4,6 +4,7 @@
 
     <data>
 
+
         <variable
             name="item"
             type="com.example.networkpractice.network.model.CultureModel" />

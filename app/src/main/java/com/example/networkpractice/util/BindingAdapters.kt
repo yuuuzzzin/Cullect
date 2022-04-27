@@ -9,9 +9,6 @@ import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerDrawable
 import jp.wasabeef.glide.transformations.BlurTransformation
 
-
-
-
 object BindingAdapters {
 
     @JvmStatic

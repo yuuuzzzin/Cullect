@@ -4,14 +4,15 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.networkpractice.model.CultureDetail
-import com.example.networkpractice.network.model.CultureDetailModel
 import com.example.networkpractice.repository.CultureRepository
 import com.example.networkpractice.ui.detail.DetailActivity
 import com.example.networkpractice.util.NetworkResult
 import com.example.networkpractice.util.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel

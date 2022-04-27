@@ -3,7 +3,6 @@ package com.example.networkpractice.util
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 
 object RecyclerViewUtil {
 

@@ -1,7 +1,6 @@
 package com.example.networkpractice.ui.realm
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
@@ -11,21 +10,15 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.networkpractice.R
 import com.example.networkpractice.base.BaseBindingActivity
 import com.example.networkpractice.databinding.ActivityCultureByRealmBinding
-import com.example.networkpractice.databinding.ActivityDetailBinding
 import com.example.networkpractice.network.model.CultureModel
 import com.example.networkpractice.ui.detail.DetailActivity
 import com.example.networkpractice.ui.home.CultureListAdapter
-import com.example.networkpractice.ui.home.HomeFragment
 import com.example.networkpractice.util.RecyclerViewUtil
-import com.example.networkpractice.viewmodel.DetailViewModel
 import com.example.networkpractice.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AndroidEntryPoint
@@ -61,7 +54,7 @@ class CultureByRealmActivity :
         }
 
         cultureListAdapter.addLoadStateListener { loadState ->
-            cultureListAdapter?.apply {
+            cultureListAdapter.apply {
                 if (itemCount <= 0 && !loadState.source.refresh.endOfPaginationReached) {
                     Timber.d("==> to show empty view")
                     binding.tvEmpty.isVisible = cultureListAdapter.itemCount == 0

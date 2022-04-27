@@ -5,7 +5,6 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.networkpractice.network.api.CultureService
 import com.example.networkpractice.network.model.CultureModel
-import timber.log.Timber
 import javax.inject.Inject
 
 class CultureByPeriodDataSource

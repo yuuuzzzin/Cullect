@@ -6,12 +6,10 @@ import androidx.paging.PagingData
 import com.example.networkpractice.model.CultureDetail
 import com.example.networkpractice.model.Mapper.toCultureDetail
 import com.example.networkpractice.network.api.CultureService
-import com.example.networkpractice.network.model.CultureDetailModel
 import com.example.networkpractice.network.model.CultureModel
 import com.example.networkpractice.repository.datasource.CultureByPeriodDataSource
 import com.example.networkpractice.repository.datasource.CultureByRealmDataSource
 import com.example.networkpractice.util.NetworkResult
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

@@ -11,7 +11,6 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.networkpractice.R
 import com.example.networkpractice.base.BaseBindingActivity
 import com.example.networkpractice.databinding.ActivityDetailBinding
-import com.example.networkpractice.ui.home.HomeFragment.Companion.CULTURE_SEQ
 import com.example.networkpractice.util.UiState
 import com.example.networkpractice.viewmodel.DetailViewModel
 import com.naver.maps.geometry.LatLng

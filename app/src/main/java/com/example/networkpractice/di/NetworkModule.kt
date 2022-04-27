@@ -2,9 +2,9 @@ package com.example.networkpractice.di
 
 import com.example.networkpractice.BuildConfig
 import com.example.networkpractice.network.api.CultureService
+import com.example.networkpractice.util.decode
 import com.tickaroo.tikxml.TikXml
 import com.tickaroo.tikxml.retrofit.TikXmlConverterFactory
-import com.example.networkpractice.util.decode
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
