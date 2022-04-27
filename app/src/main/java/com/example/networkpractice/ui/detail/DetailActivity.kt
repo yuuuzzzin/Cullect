@@ -44,47 +44,46 @@ class DetailActivity : BaseBindingActivity<ActivityDetailBinding>(R.layout.activ
     private fun observeViewModel(savedInstanceState: Bundle?) {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch {
-                    viewModel.uiState.collect { state ->
-                        when (state) {
-                            is UiState.Loading -> {
-                                binding.loading.visibility = View.VISIBLE
+                viewModel.uiState.collect { state ->
+                    when (state) {
+                        is UiState.Loading -> {
+                            binding.loading.visibility = View.VISIBLE
+                        }
+                        is UiState.Success -> {
+                            binding.item = state.data
+                            binding.tvEmpty.visibility = View.GONE
+                            binding.loading.visibility = View.GONE
+
+                            if (!state.data.url.isNullOrEmpty()) {
+                                binding.btTickting.visibility = View.VISIBLE
+                                binding.btTickting.setOnClickListener {
+                                    val intent = Intent(
+                                        Intent.ACTION_VIEW,
+                                        Uri.parse(state.data.url)
+                                    )
+                                    startActivity(intent)
+                                }
+                            } else {
+                                binding.btTickting.visibility = View.GONE
                             }
-                            is UiState.Success -> {
-                                binding.item = state.data
-                                binding.tvEmpty.visibility = View.GONE
-                                binding.loading.visibility = View.GONE
 
-                                if (!state.data.url.isNullOrEmpty()) {
-                                    binding.btTickting.visibility = View.VISIBLE
-                                    binding.btTickting.setOnClickListener {
-                                        val intent = Intent(
-                                            Intent.ACTION_VIEW,
-                                            Uri.parse(state.data.url)
-                                        )
-                                        startActivity(intent)
-                                    }
-                                } else {
-                                    binding.btTickting.visibility = View.GONE
-                                }
+                            if (!state.data.gpsX.isNullOrEmpty() && !state.data.gpsY.isNullOrEmpty()) {
+                                gpsX = state.data.gpsX.toDouble()
+                                gpsY = state.data.gpsY.toDouble()
+                                Timber.d("$gpsX/$gpsY")
 
-                                if (!state.data.gpsX.isNullOrEmpty() && !state.data.gpsY.isNullOrEmpty()) {
-                                    gpsX = state.data.gpsX.toDouble()
-                                    gpsY = state.data.gpsY.toDouble()
-                                    Timber.d("$gpsX/$gpsY")
-
-                                    setMapView(savedInstanceState)
-                                }
+                                setMapView(savedInstanceState)
                             }
-                            is UiState.Error -> {
-                                binding.loading.visibility = View.GONE
-                                binding.tvEmpty.apply {
-                                    text = "코드: ${state.code} / 메시지: ${state.msg}"
-                                    visibility = View.VISIBLE
-                                }
+                        }
+                        is UiState.Error -> {
+                            binding.loading.visibility = View.GONE
+                            binding.tvEmpty.apply {
+                                text = "코드: ${state.code} / 메시지: ${state.msg}"
+                                visibility = View.VISIBLE
                             }
                         }
                     }
+
                 }
             }
         }
